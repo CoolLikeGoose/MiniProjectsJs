@@ -37,11 +37,18 @@ function handleClick(e) {
 
     if (checkWin(currentClass)) {
         endGame(false);
+    } else if (checkDraw()) {
+        endGame(true);
+    } else {
+        swapTurns()
+        setBoardHoverClass()
     }
+}
 
-    swapTurns()
-
-    setBoardHoverClass()
+function checkDraw() {
+    return [...cellElements].every(cell => {
+        return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS);
+    });
 }
 
 function placeMark(cell, currentClass) {
@@ -73,7 +80,7 @@ function checkWin(currentClass) {
 
 function endGame(draw) {
     if (draw) {
-
+        winningMessageTextElement.innerHTML = "Draw!";
     } else {
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
     }
