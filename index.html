@@ -6,15 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="Index.html">Main Page</a></li>
-            <li><a href="TicTacToe.html">Tic Tac Toe Game</a></li>
-        </ul>
-    </nav>
+    <div class="phone-frame">
+        <div class="phone-screen">
+            <div class="imageContainer">
+                <div class="roman">JS<br>Mini<br>Games</div>
+                <div class="overlay"></div>
+            </div>
+            <!-- <div class="button-menu button-menu1"></div> -->
+            <svg class="button-menu button-menu1" height="24" width="24" onclick="document.querySelector('.phone-screen').classList.toggle('active')">
+                <circle class="bg" r="12" cx="12" cy="12"/>
+                <path class="line line1" d="M 6,8 H 18"/>
+                <path class="line line2" d="M 6,12 H 18"/>
+                <path class="line line3" d="M 6,16 H 18"/>
+            </svg>
+            <div class="menu" onclick="document.querySelector('.phone-screen').classList.remove('active')">
+                <div class="option" id="TicTacToe">
+                    <div class="roman">Tic<br><br>Tac<br><br>Toe</div>
+                </div>
+                <div class="option">
+                    <div class="roman">Hosomaki</div>
+                </div>
+                <div class="option">
+                    <div class="roman">Tempura</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
