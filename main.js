@@ -2,5 +2,5 @@ console.log("Scripts loaded")
 
 document.getElementById("TicTacToe").addEventListener('click', () => {
     console.log("click")
-    window.location.href = "TicTacToe.html"
+    window.location.href = "TicTacToe/TicTacToe.html"
 });
